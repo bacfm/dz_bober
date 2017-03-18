@@ -1,0 +1,98 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/* #page{
+	width: 1200px;
+	margin: 0 auto;
+} */
+.head_logo{
+	text-align: center;	
+}
+.head_logo img{
+	width: 170px;
+	height: 140px;
+}
+nav ul{
+	display: flex;
+	list-style: none;
+	background: rgb(197, 239, 247);
+	height: 40px;
+	align-items: center;		
+}
+nav li{
+	margin: 0 10px;
+	padding: 10px;
+}
+nav li:hover{
+	color: #ff9100;
+	cursor: pointer;
+}
+.active{
+	background: rgb(82, 179, 217);
+	color: white;
+}
+.search{
+	height: 20px;
+	background: url(img/search.png) no-repeat rgb(236,236,236);
+	padding: 0 0 0 20px;
+	font-size: 14px;
+}
+.popular{
+	text-align: center;
+	padding: 10px 0 20px 0;
+	background: rgb(228, 241, 254);
+
+}
+.popular::after{
+	content: "";
+	display: block;
+	width: 400px;
+	margin: 0 auto;
+	padding: 20px 0 0 0;	
+	border-bottom: 1px solid gray;
+}
+.main_content{
+	display: flex;
+	flex-wrap: wrap;
+	background: rgb(228, 241, 254);
+}
+.main_content p{
+	padding: 10px 30px;
+}
+.main_content h4{
+	padding-left: 10px;
+}
+.breed{
+	display: block;
+	width: 25%;
+	text-align: center;
+	text-decoration: none;
+}
+.breed img{
+	width: 120px;
+	height: 120px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.breed img:hover{
+	transform: scale(1.2);
+}
+
+.breed span{
+	display: block;
+	width: 140px;
+	text-align: center;
+	margin: 0 auto;
+    padding: 10px 0;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+.breed span:hover{
+	color: #4fc17f;
+}
+hr{
+	width: 100%;
+	margin:15px 0;
+}
