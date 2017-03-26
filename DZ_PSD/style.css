@@ -3,7 +3,7 @@
 	margin: 0;
 }
 body{
-	width: 2000px;
+	min-width: 320px;
 }
 h1{
 	font-size: 50px;
@@ -11,8 +11,8 @@ h1{
 	text-transform: uppercase;
 	position: relative;
 	width: 500px;
+	text-align: center;
 }
-
 h1::after{
 	content: "";
     position: absolute;
@@ -29,8 +29,10 @@ p{
 	font-size: var(--info-size);
 }
 .header{
-	background: url(img/bg_1p.png) no-repeat;
+	background: url(img/bg_1p.png) center no-repeat;
 	height: 975px;
+	
+	/*background-size: 100%;*/
 	margin-bottom: 160px;
 }
 nav{
@@ -39,25 +41,58 @@ nav{
 	background: rgba(0, 8, 12, 0.1);
 	font-family: var(--main-font);
 }
-nav ul{
-	display: flex;
+.nav_hamburger{
+		display: none;
+		flex-direction: column;
+		background: url(img/hamburger.png) no-repeat;
+		opacity: .4;
+		background-size: 100%;
+		width: 60px;
+		height: 40px;
+		position: absolute;
+		top: 50px;
+		right: 50px;
+	}
+.appear{
+	display: none;
+	position: absolute;
+	top: 40px;
+	 
+}
+.appear ul{
 	list-style: none;
-	margin: 0 auto;
-	height: 100%;
 }
-nav li{
-	height: 100%;
-	display: flex;
-	align-items: center;
-	padding: 0px 22px 0px 22px;
+.appear li{
+	padding: 5px 0;
 }
-nav a{
+.appear a{
 	text-decoration: none;
 	font-size: 17px;
 	color: #606060;
 	text-transform: uppercase;
 }
-nav a:hover{
+.appear a:hover{
+	color: black;
+}
+.nav_main{
+	display: flex;
+	list-style: none;
+	margin: 0 auto;
+	height: 100%;
+}
+.nav_main li{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0px 22px 0px 22px;
+}
+.nav_main a{
+	text-decoration: none;
+	font-size: 17px;
+	color: #606060;
+	text-transform: uppercase;
+}
+.nav_main a:hover{
 	color: #101211;
 	border-bottom: 2px solid;
 	padding-bottom: 10px;
@@ -67,21 +102,24 @@ nav a:hover{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
 }
 .discography h1{
 	color: #9a6545;
 }
-.discography p{
+.description{
 	padding-top: 50px;
-	width: 720px;
+	width: 36%;
 	margin: 0 auto
 }
 .inside-content{
 	display: flex;
-	width: 1200px;
+	width: 60%;
 	margin-top: 150px;
 	font-family: var(--info-font);
 	justify-content: center;
+	flex-wrap: wrap;
 	z-index: 10;
 }
 
@@ -93,14 +131,10 @@ nav a:hover{
 	font-weight: bold;
 	margin-top: 20px;
 }
-.inside-content span::after{
-	content: "";
-	width: 500px;
-	border: 1px solid black;
-	position: absolute;
-	bottom: 0;
-	left: 0;
+.underline{
+	width: 100%;
 }
+
 .inside-content h3{
 	font-size: var(--info-size); 
 	margin-top: 15px;
@@ -111,37 +145,42 @@ nav a:hover{
 
 }
 .year{
-	width: 500px;
+	width: 41.666%;
 	text-align: left;
 	padding-right: 25px;
 	padding-top: 20px;
 
 }
 .year-info{
-	width: 670px;
+	width: 55.833%;
 	text-align: left;
 }
 .year-info p{
 	padding-top: 25px;
-	width: 670px;
+	width: 100%;
 }
-.year-info button{
+ button{
 	background: url(img/but-1.png);
 	width: 196px;
 	height: 56px;
 	font-size: 23px;
 	font-family: var(--info-font);
 	cursor: pointer;
-	margin-top: 35px;
+	margin-top: 45px;
+	margin-left: 45px;
 }
-.year-info > .play-on{
+.play-on{
 	background: url(img/but-2.png);
 }
-.year-info > .play-but{
+.play-but{
 	background: url(img/but-3.png);
 }
 .bg{
-	position: relative;
+	/*position: relative;*/
     bottom: 165px;
+   	width: 100%;
     z-index: 0;
+}
+.bg img{
+	width: 100%;
 }
