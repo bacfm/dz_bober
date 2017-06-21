@@ -1,0 +1,118 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #006064;
+}
+#gifts-list {
+		display: flex;
+    	overflow: auto;
+    	cursor: pointer;
+    	flex-direction: column;
+    	width: 150px;
+    	height: 500px;
+    	position: fixed;
+    	right: 3px;
+    	top: 100px;
+    	border: 1px solid black;
+    	border-radius: 5px;
+
+	}
+	#gifts-list img {
+		padding: 0 3px;
+	}
+	.style{
+		background: blue;
+	}
+	#message-list{
+		width: 700px;
+		height: 550px;
+		display: flex;
+		overflow: auto;
+		margin: 0 auto;
+		flex-direction: column;
+		margin-bottom: 80px;
+		margin-top: 20px;
+		position: relative;
+		background: #E0F7FA;
+		z-index: 0;
+		border-radius: 5px;
+	}
+	#message-list p{
+		margin-top: 20px;
+		margin-left: 5px;
+		border-radius: 5px;
+		background: #0277BD;
+		padding: 7px;
+		width: 40%;
+	}
+	#message-list > img{
+		width: 300px;
+		margin-top: 20px;
+		margin-left: 5px;
+	}
+	form {
+		position: fixed;
+    	width: 100%;
+    	bottom: 0;
+    	padding: 10px 0;
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	overflow: hidden;
+    	z-index: 99999;
+    	background: #80DEEA;
+	}
+	form input{
+		width: 30%;
+		height: 50px;
+		font-size: 14px;
+		z-index: 9999;
+		border-radius: 5px;
+	}
+	button{
+		margin-left: 20px;
+		width: 100px;
+		height: 30px;
+		border-radius: 5px;
+		border: none;
+		background-image: linear-gradient(to right, rgb(64, 59, 74), rgb(231, 233, 187));
+		cursor: pointer;
+		font-size: 14px;
+		color: white;
+	}
+	button:hover{
+		background-image: linear-gradient(to right,rgb(231, 233, 187), rgb(64, 59, 74));
+	}
+	h1 {
+		width: 400px;
+		margin: auto;
+		text-align: center;
+		color: white;
+		text-shadow: black 0.1em 0.1em 0.2em;
+	}
+	.social{
+		position: absolute;
+    	right: 20px;
+    	bottom: 10px;
+	}
+	.social a{
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background-image: url(spritesheet.png);
+	}
+	[data-filter="facebook"]{background-position: -5px -5px;}
+	[data-filter="twitter"]{background-position: -39px -5px;}
+	[data-filter="google"]{background-position: -73px -5px;}
+	[data-filter="share"]{background-position: -107px -5px;}
+
+
+
+
+
+
+
+
+
