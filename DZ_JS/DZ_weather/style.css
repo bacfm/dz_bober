@@ -1,0 +1,110 @@
+*{
+	padding: 0;
+	margin: 0;
+	color: white;
+}
+body {
+	background-image: url("img/1.jpg");
+	background-size: 100%;
+	height: 100vh;
+}
+.wrpapper {
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.wrpapper header {
+	margin-bottom: 80px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid black;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 50px;
+	position: relative;
+}
+.wrpapper header img {
+	width: 150px;
+	height: 150px;
+}
+.main-info {
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+	justify-content: space-around;
+}
+.main-info >* {
+	margin-bottom: 50px;
+}
+/*.todayEverTemp{
+	font-size: 40px;
+	display: flex;
+	
+}
+*/
+.main-temp {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 75px;
+}
+.main-temp img {
+	width: 100px;
+}
+.weather-for-week{
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	font-size: 24px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 5px;
+}
+.weather-for-week li{
+	display: flex;
+	flex-basis: 20%;
+	flex-direction: column;
+	border-right: 1px solid black;
+	align-items: center;
+}
+.weather-for-week li img {
+	width: 70px;
+}
+.description {
+	list-style: none;
+	font-size: 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+}
+.city {
+	font-size: 50px;
+}
+.change-figures {
+	position: absolute;
+	top: 0;
+	right: 1px;
+	display: flex;
+	flex-direction: column;
+}
+.change-figures button {
+	flex-basis: 50%;
+}
+.kelvine {
+	background: white;
+	pointer-events: none;
+	width: 25px;
+	height: 50px;
+	font-size: 20px;
+	color: black;
+}
+.celsi {
+	width: 25px;
+	height: 50px;
+	color: black;
+	font-size: 20px;
+	background: #8e8a83;
+}
