@@ -1,0 +1,13 @@
+import React, { Component } from 'react';
+
+export default class SearchForm extends Component {
+	render() {
+		return (
+			<div className='Search'>
+			
+			<input type="text" placeholder="Search" />
+			<button>Search</button>
+			</div>
+			);
+	}
+}
