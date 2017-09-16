@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import { connect } from 'react-redux';
 import { addUser } from '../../actions/registerForm';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
  
 
 class RegisterForm extends Component {
@@ -33,45 +33,55 @@ class RegisterForm extends Component {
 			name: '',
 			password: ''
 		});
-	}
-	logIn(){
+	} 
+	logIn(e){
+		e.preventDefault();
 			const { users } = this.props;
 			const { name, password, isAuthorized } = this.state;
-			users.find(function(user){
-			if(user.name === name && user.password === password){
-				return this.setState({
+			const checkLog = users.find(user => user.name === name);
+			console.log(checkLog, checkLog.password)
+			
+			if(checkLog.name === name && checkLog.password === password){
+				 this.setState({
 					isAuthorized: true
 				});
-			} else {
-				return this.setState({
+			} else if(!checkLog || !checkLog.password) {
+				alert("Неправильный логин или пароль");
+				this.setState({
+					name: " ",
+					password: " ",
 					isAuthorized: false
 				});
+			} else {
+				return;
 			}
-		});
 	}
 	render() {
-		const { isAuthorized } = this.state;
+		const { name, password, isAuthorized } = this.state;
 		console.log(isAuthorized);
-		const btn = isAuthorized ? <button><Link to="/logo">Sing in</Link></button> : <button><Link to="/">Sing in</Link></button>;
+		if(!isAuthorized){
 		return (
 			<div className="RegisterForm">
 			<form>
 			<div>
 			<label>Login</label>
-			<input type="text" onChange={this.onNameChange} required />
+			<input type="text" onChange={this.onNameChange} value={name} required />
 			</div>
 			<div>
 			<label>Password</label>
-			<input type="text" onChange={this.onPasswordChange} required />
+			<input type="text" onChange={this.onPasswordChange} value={password} required />
 			</div>
 			<div>
-			{btn}
+			<button onClick={this.logIn}>Sing in</button>
 			<button><Link to="/singup">Sing up</Link></button>
 			</div>
 			</form>
 			</div>
 			); 
+	} else {
+		return <Redirect to="/" />
 	}
+}
 };
 
 const mapState = (state) => {

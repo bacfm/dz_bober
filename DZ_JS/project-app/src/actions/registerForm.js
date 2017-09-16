@@ -5,3 +5,12 @@ export function addUser(name, password){
 			password: password
 		}
 }
+
+export function logIn(name, password, isAdmin){
+	return {
+		type: 'LOG_IN',
+		name,
+		password,
+		isAdmin
+	}
+}

@@ -27,6 +27,9 @@
 	.inside-content > *{	
 		width: 100%;
 	}
+	.year{
+		padding-right: 0;
+	}
 	.year span{
 		font-size: 21px;
 	}

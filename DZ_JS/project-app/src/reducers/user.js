@@ -2,9 +2,15 @@ let idCounter = 0
 const initialState = [
 	{
 		name: "Guest",
-		password: "",
+		password: "123",
 		id: 0,
-		role: 0
+		isAdmin: false
+	},
+	{
+		name: "bober",
+		password: "superAdmin",
+		id: 0,
+		isAdmin: true
 	}
 ] 
 
@@ -18,7 +24,7 @@ export function users(state = initialState, action){
 		return state;
 	}
 	return state;
-}
+} 
 
 function addUser(state, action){
 	return [...state, {name: action.name, password: action.password, id: ++idCounter, role: 1}]

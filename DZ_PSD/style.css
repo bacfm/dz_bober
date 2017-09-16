@@ -1,4 +1,4 @@
-*{
+	*{
 	padding: 0;
 	margin: 0;
 }
@@ -253,6 +253,54 @@ nav{
 	width: 100%;
 }
 .player{
+	position: relative;
+}
+.controls{
+	position: absolute;
+	left: 0;
+	bottom: 20px;
+	width: 100%;
+}
+.controls a{
+	display: inline-block;
+	width: 13px;
+	height: 16px;
+	background-image: url(img/play.png);
+	margin-right: 10px;
+}
+.controls hr{
+	width: 70%;
+	color: white;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.controls p{
+	display: inline-block;
+	color: white;
+	font-size: 12px;
+	margin-bottom: 2px;
+	margin-left: 10px;
+}
+.controls span{
+	opacity: 0.3;
+}
+.medias{
+	display: inline-block;
+	margin-left: 20px;
+}
+.medias a{
+	display: inline-block;
+	width: 16px;
+	height: 20px;
+	background-image: url(img/media-sprite.png);
+	margin-left: 30px;
+}
+[data-media="volum"]{background-position-x: -9px;
+}
+[data-media="hurt"]{background-position-x: -31px;}
+[data-media="share"]{background-position-x:-55px;}
+[data-media="massage"]{background-position-x:-78px;}
+.player{
 	width: 50%;
 	/*background: url(img/player1.png) no-repeat;
 	background-size: 100%;*/
@@ -337,7 +385,17 @@ nav{
 .slider .year-info span{
 	margin-top: 50px;
 }
-
+.switch {
+	margin-top: 40px;
+	display: flex;
+	align-items: center;
+}
+.switch a{
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	margin-left: 20px;
+}
 
 
 
@@ -360,6 +418,7 @@ nav{
 }
 .read-me  .inside-content::after{
 	font-size: 50px;
+	font-weight: 900;
 	position: absolute;
 	opacity: 0.3;
 	bottom: -30px;
