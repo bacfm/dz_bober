@@ -5,12 +5,23 @@ import MessageWindow from '../../components/MessageWindow';
 
 
 export default class ChatWindow extends Component{
+	constructor(props) {
+		super(props);
+		this.state = {
+			title: ""
+		}
+	}
 	render() {
+		const { title } = this.state.title;
 		return (
 			<div className="chatWindow">
-			<MessageWindow />
+			<MessageWindow
+			title = {title}
+			 />
 			<GifBar />
-			<AddMessageForm />
+			<AddMessageForm
+			messContent = {title}
+			 />
 			</div>
 			);
 	}

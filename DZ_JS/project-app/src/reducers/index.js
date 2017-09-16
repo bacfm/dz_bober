@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 import { movies } from './MovieList';
-import { routerReducer } from 'react-router-redux';
+import { filterMovies } from './FilterMovies';
+import { users } from './user';
+
 
 export default combineReducers({
-	movies
+	users,
+	movies,
+	filterMovies
 })

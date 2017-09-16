@@ -42,7 +42,13 @@ function changeUserInfo(){
 	const person = [];
 	res.forEach(el =>{
 		let user = el.match(/\/.*\/?name=(\w+)\&lastname=(\w+)&age=(\d+)/);
-
+		let inf = {};
+		inf.name = user[1];
+		inf.lastname = user[2];
+		inf.age = user[3];
+		person.push(inf);
+	});
+	let user = person.find(el => el.name === hash;)
 
 	console.log(hash);
 }

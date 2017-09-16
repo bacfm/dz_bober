@@ -4,21 +4,21 @@ export default class AddMessageForm extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			title: ""
+			title: this.props.messContent
 		}
 		this.onChange = this.onChange.bind(this);
 		this.clearForm = this.clearForm.bind(this);
-	}
+	} 
 
 onChange(ev){
 	this.setState({
-		title: ev.target.value
+		messContent: ev.target.value
 	});
 }
 
-	clearForm(){
+	clearForm(){ 
 		this.setState({
-			title: ""
+			messContent: ""
 		});
 	}
 	render() {
@@ -30,7 +30,12 @@ onChange(ev){
 			<input 
 			type="text"
 			placeholder="Type your message"
-			onChange={this.onChange}
+			onClick={(ev) => {
+				ev.preventDefault();
+				this.onChange;
+				this.ClearForm;
+			}
+			}
 			value = {title}
 			/>
 			<button>Send</button>
