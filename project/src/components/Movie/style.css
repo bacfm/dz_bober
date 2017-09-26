@@ -1,0 +1,24 @@
+.movies{
+	display: flex;
+	flex-wrap: wrap;
+}
+.movies > * {
+	flex-basis: 25%;
+}
+.movie_pict{
+	width: 200px;
+	height: 200px;
+}
+.movie {
+	flex-basis: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.movie a {
+	text-decoration: none;
+	color: black;
+}
+.movie a:hover {
+	color: #90A4AE;
+}
