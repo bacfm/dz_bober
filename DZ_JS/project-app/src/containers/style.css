@@ -1,6 +1,0 @@
-.movieList{
-	display: flex;
-}
-.movieList > * {
-	flex-basis: 25%;
-}
