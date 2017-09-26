@@ -1,0 +1,22 @@
+.RegisterForm form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 500px;
+	height: 300px;
+	border: 1px solid black;
+	justify-content: space-around;
+	margin: auto;
+}
+.RegisterForm form > div {
+	display: flex;
+	justify-content: space-around;
+}
+.RegisterForm form input {
+	width: 250px;
+	height: 18px;
+}
+.RegisterForm form button {
+	padding: 7px;
+	font-size: 16px;
+}
