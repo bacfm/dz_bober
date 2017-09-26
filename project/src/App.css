@@ -1,0 +1,9 @@
+.menu{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.menu ul {
+  display: flex;
+}
