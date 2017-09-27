@@ -5,6 +5,7 @@
   "homepage": "http://localhost:5000/",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "express-history-api-fallback": "^2.2.1",
     "express-session": "^1.15.5",
     "mongoose": "^4.11.13",
     "passport": "^0.4.0",

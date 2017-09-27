@@ -5,7 +5,9 @@ const express = require('express'),
       userSchema = require('./schemas/users'),
       bodyParser = require('body-parser'),
       passport = require('passport'),
-      LocalStrategy = require('passport-local').Strategy;
+      LocalStrategy = require('passport-local').Strategy,
+      historyFallback = require('express-history-api-fallback'),
+      root = `${__dirname}/../build`;
 
       const User = mongoose.model('appUser', userSchema);
       
@@ -16,7 +18,8 @@ const express = require('express'),
         console.log('Connected!!!');
       })
 
-      app.use(express.static('./public'))
+      app.use(express.static(root));
+      app.use(historyFallback('index.html', { root }));
       app.use(bodyParser.urlencoded({ extended: true }));
       app.use(bodyParser.json());
       app.use(session({ secret: 'verysecretkey'}));
