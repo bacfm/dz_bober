@@ -1,0 +1,23 @@
+.register{
+    margin: 0 auto;
+    width: 300px;
+    background: #f78383;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.register form {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+.register div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+}
+.register .reg-btns {
+    display: flex;
+    justify-content: space-around;
+}
