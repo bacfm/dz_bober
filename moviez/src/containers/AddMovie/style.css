@@ -1,0 +1,32 @@
+.add-movie{
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: #f78383;
+}
+.add-movie > form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.add-movie form > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.add-movie form input {
+    width: 200px;
+}
+.add-movie form textarea {
+    width: 200px;
+}
+.add-movie form label {
+    padding-left: 15px;
+}
+.add-movie form button {
+    width: 90px;
+    font-size: 14px;
+    padding: 5px;
+}
