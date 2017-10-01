@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchFilms } from '../../actions/getData';
+//import { fetchFilms } from '../../actions/getData';
 
 
 class MovieList extends Component{
@@ -9,10 +9,12 @@ class MovieList extends Component{
     }
 
     componentDidMount(){
-        this.props.getMovies();
+       fetch('/movies')
+            .then((res) => res.json())
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
     }
     render(){
-        console.log(this.props.movies);
         return (
             <div className='movie-list'>
             </div>
@@ -26,10 +28,10 @@ const mapState = (state) => {
     }
 }
 
-const mapDispatch = (dispatch) => {
-    return {
-        getMovies: () => dispatch(fetchFilms())
-    }
-}
+// const mapDispatch = (dispatch) => {
+//     return {
+//         getMovies: () => dispatch(fetchFilms())
+//     }
+// }
 
-export default connect (mapState, mapDispatch)(MovieList);
+export default connect (mapState)(MovieList);

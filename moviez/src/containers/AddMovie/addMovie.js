@@ -24,24 +24,26 @@ export default class AddMovie extends Component {
     onDescriptionChange(e){
         e.preventDefault();
         this.setState({
-            title: e.target.value
+            description: e.target.value
         });
     }
     onCoverChange(e){
         e.preventDefault();
         this.setState({
-            title: e.target.value
+            cover: e.target.value
         });
     }
     onFormSubmit(e){
+        e.preventDefault();
         const { title, description, cover } = this.state;
+        console.log(title, description);
         fetch('/add-movie', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ title: title, description: description, cover: cover })
+            body: JSON.stringify({ title, description, cover })
         })
         .then((res) => res.json())
         .then((res) => console.log(res))
@@ -64,7 +66,7 @@ export default class AddMovie extends Component {
                         <label>Movie Cover</label>
                         <input onChange={this.onCoverChange} type='text' placeholder='Movie cover' />
                     </div>
-                    <button>Add Movie</button>
+                    <button><Link to='/'> Add Movie </Link></button>
                 </form>
             </div>
         );
