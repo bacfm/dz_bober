@@ -27,6 +27,7 @@ export class SignUp extends Component {
         });
     }
     onFormSubmit(e){
+        e.preventDefault();        
         const { log, pass } = this.state;
         fetch('/signup', {
             method: 'POST',

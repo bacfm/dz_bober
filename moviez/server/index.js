@@ -85,11 +85,20 @@ const express = require('express'),
       });
 
       app.get('/movies', (req, res) => {
-              Movie.find({}, (err, data) => {
-                  if(err) return rej(err);
-                  res(data);
-              });
-      });
+        Movie.find({}, (err, data) => {
+            if(err) {
+              return res.status(500).end();
+            }
+            const movielists = data.map(mv => ({
+              mv: pl._id,
+              title: mv.title,
+              description: mv.description,
+              cover: mv.cover
+            }));
+        
+            res.send({ movielists });
+        });
+      });       
 
       app.listen(3000, () => {
           console.log('Connected!!!');
