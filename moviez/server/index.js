@@ -1,5 +1,6 @@
 const express = require('express'),
       historyFallback = require('express-history-api-fallback'),
+      cookieParser = require('cookie-parser'),
       bodyParser = require('body-parser'),
       session = require('express-session'),
       mongoose = require('mongoose'),
@@ -24,37 +25,40 @@ const express = require('express'),
       
       //-----------Middleware------------------
       app.use(express.static(root));
-      app.use(historyFallback('index.html', {root}));
       app.use(bodyParser.urlencoded({ extended: false }));
       app.use(bodyParser.json());
+      app.use(cookieParser());
       app.use(session({ secret: 'verysecretkey' }));
       app.use(passport.initialize());
       app.use(passport.session());
 
 
       passport.serializeUser((user, done) => {
-          done(null, user.id);
+        done(null, user.username);
       });
+      
       passport.deserializeUser((username, done) => {
-          User.findOne({ username }, (err, user) => {
-              done(err, user);
-          });
+        User.findOne({ username }, (err, user) => {
+          done(err, user);
+        });
       });
       passport.use(new LocalStrategy((username, password, done) => {
           User.findOne({ username }, (err, user) => {
               if(err) return done(err);
               if(!user) return done(null, false, { message: 'Incorrect username' });
-              if(!user.validPassword(password)) return done(null, false, { message: 'Incorrect password' });
+              if(!user.password === password) return done(null, false, { message: 'Incorrect password' });
 
               return done(null, user);
           })
       }));
 
-      app.post('/login', passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: '/login',
-        failureFlash: true
-      }));
+      app.post("/login", passport.authenticate("local"), (req, res) => {
+          console.log(req.user);
+        if(req.user)
+          return res.send(user)
+        
+        res.status(500).send({ errorText: "Failed to login" });
+      })
 
       app.post('/signup', (req, res, next) => {
           const username = req.body.username ? req.body.username : null;
@@ -90,7 +94,7 @@ const express = require('express'),
               return res.status(500).end();
             }
             const movielists = data.map(mv => ({
-              mv: pl._id,
+              id: mv._id,
               title: mv.title,
               description: mv.description,
               cover: mv.cover
@@ -98,8 +102,9 @@ const express = require('express'),
         
             res.send({ movielists });
         });
-      });       
+      });     
 
+      app.use(historyFallback('index.html', {root}));
       app.listen(3000, () => {
           console.log('Connected!!!');
       });

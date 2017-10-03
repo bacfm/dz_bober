@@ -37,8 +37,6 @@ export class SignUp extends Component {
             },
             body: JSON.stringify({ username: log, password: pass })
         })
-        .then((res) => res.json())
-        .then((res) => console.log(res))
         .catch((err) => console.log(err));
     }
     render(){

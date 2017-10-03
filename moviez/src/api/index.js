@@ -1,5 +1,5 @@
 export function getMovies(){
-    return fetch('/movies').then((res) => res.json())
+    return fetch('/movies').then((res) => res.json());
 }
 
 export function getUsers(){

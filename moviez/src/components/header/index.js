@@ -7,7 +7,9 @@ export default class Header extends Component {
     render () {
         return (
             <header>
-                <h2> <Link to='/'> Mooooooviez <Link ></h2>
+                <h1 className="logo-f"> NOT a</h1>
+                <img src='./img/logo.png' />
+                <h1 className="logo-s"><Link to='/'>Mooooooviez</Link></h1>
             </header>
         );
     }
