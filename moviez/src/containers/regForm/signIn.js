@@ -11,6 +11,7 @@ export class SignIn extends Component {
         }
         this.onLogChange = this.onLogChange.bind(this);
         this.onPassChange = this.onPassChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
     onLogChange(e){
         e.preventDefault();
@@ -24,11 +25,25 @@ export class SignIn extends Component {
             pass: e.target.value
         });
     }
+    onFormSubmit(e){
+        e.preventDefault();        
+        const { log, pass } = this.state;
+        fetch('/signup', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: log, password: pass })
+        })
+        .catch((err) => console.log(err));
+    }
     render(){
         const { log, pass } = this.state;
         return (
             <div className='register'>
-                <form action='/login' method='post'>
+                <form action='/login' method='post' onSubmit={this.onFormSubmit}>
                   <div>
                       <label>Login</label>
                       <input onChange={this.onLogChange} type='text' name='username' placeholder='Enter your login' required />
