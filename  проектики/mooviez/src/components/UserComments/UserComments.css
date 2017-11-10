@@ -1,0 +1,9 @@
+.userComment {
+	margin: 10px 0;
+}
+
+.confirmed {
+	color: red;
+	text-decoration: underline;
+	font-size: 12px;
+}

@@ -1,0 +1,8 @@
+.notAdminUser {
+	display: flex;
+  align-items: center;
+}
+
+.notAdminUser > div{
+	padding: 10px;
+}

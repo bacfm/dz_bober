@@ -1,0 +1,23 @@
+.Auth {
+	margin: 20px auto;
+	width: 50%;
+	text-align: center;
+}
+
+.Auth form {
+	border: 1px solid;
+}
+
+.Auth form label {
+	width: 100px;
+}
+
+.Auth form input[type="text"], .Auth form input[type="password"] {
+	width: 200px;
+	padding: 0 10px;
+	margin: 10px;
+}
+
+.Auth form button {
+	margin: 10px 20px;
+}

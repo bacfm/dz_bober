@@ -1,0 +1,51 @@
+.singleMovie {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.singleMovie_img {
+	width: 50%;
+	text-align: center;
+}
+
+.singleMovie_img img {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.singleMovie_description {
+	width: 50%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.sendComment {
+	padding: 10px 20px;
+}
+
+.sendComment textarea {
+	width: 50%;
+}
+
+.submitComment {
+	width: 50%;
+}
+
+.comment {
+	padding: 10px 20px;
+}
+
+.comment p {
+	padding: 10px;
+}
+
+.editBtn {
+	border: 1px red solid;
+	padding: 5px;
+}

@@ -1,0 +1,15 @@
+.logo {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.logo span {
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+}
