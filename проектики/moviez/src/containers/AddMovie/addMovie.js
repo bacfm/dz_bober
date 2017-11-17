@@ -66,7 +66,7 @@ export default class AddMovie extends Component {
                         <label>Movie Cover</label>
                         <input onChange={this.onCoverChange} type='text' placeholder='Movie cover' />
                     </div>
-                    <button><Link to='/'> Add Movie </Link></button>
+                    <button>Add Movie</button>
                 </form>
             </div>
         );
