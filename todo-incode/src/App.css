@@ -1,0 +1,87 @@
+
+.App {
+  background: #d8d8d8;
+  height: 100%;
+}
+header{
+  text-align: center;
+  padding: 20px 0 30px 0;
+  border-bottom: 1px solid #c3b9b9;
+  background: #797676;
+}
+.todo-list{ 
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #c3b9b9;
+  border-top: none;
+  justify-content: space-between;
+}
+.todo{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 2px solid #c3b9b9;
+  color: white;
+  align-items: end;
+}
+.todo p {
+  padding: 10px;
+  font-size: 16px;
+}
+.todo input:nth-child(2){
+  padding: 10px;
+}
+.todo .controlls {
+  width: 100%;
+  height: 50px;
+  background: #afafaf;
+  display: flex; 
+  justify-content: space-between;
+}
+.todo .controlls button {
+  padding: 10px;
+}
+
+.add-todo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-todo div {
+  margin-top: 40px;
+  text-align: center;
+}
+.add-todo a{
+  text-decoration: none;
+  color: white;
+}
+.add-todo button {
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px;
+  background: #afafaf;
+  margin-top: 40px;
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+}
+form input {
+  width: 300px;
+  padding: 5px;
+}
+form button{
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+}
